@@ -55,4 +55,96 @@
             right: 20px;
             background: white;
             border: 1px solid #ccc;
-            border-ra
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .chatbox-messages {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-bottom: 1px solid #eee;
+            height: 150px;
+        }
+        .chatbox-input {
+            padding: 10px;
+            display: flex;
+        }
+        .chatbox-input input {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chatbox-input button {
+            padding: 8px 15px;
+            margin-left: 5px;
+            background: #2E8B57;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Armando’s Company Name</h1>
+    <p>Your Reliable Tree Cutting Services</p>
+</header>
+
+<nav>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+    We Take Care of Your Trees
+</div>
+
+<div class="section" id="services">
+    <h2>Our Services</h2>
+    <p>We provide professional tree cutting and trimming services to keep your yard safe and beautiful.</p>
+</div>
+
+<div class="section" id="pricing">
+    <h2>Pricing</h2>
+    <p>Contact us for a free quote!</p>
+</div>
+
+<div class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out to schedule your service today.</p>
+</div>
+
+<div class="chatbox">
+    <div class="chatbox-messages" id="chatbox-messages">
+        <div>Welcome to our chat! Ask us something like "What is your phone number?"</div>
+    </div>
+    <div class="chatbox-input">
+        <input type="text" id="chatbox-input" placeholder="Type your message...">
+        <button onclick="sendChat()">Send</button>
+    </div>
+</div>
+
+<footer>
+    © 2025 Armando’s Company Name – All Rights Reserved
+</footer>
+
+<script>
+    function sendChat() {
+        const input = document.getElementById('chatbox-input');
+        const message = input.value.trim().toLowerCase();
+        const chatbox = document.getElementById('chatbox-messages'
