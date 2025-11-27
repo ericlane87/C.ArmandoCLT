@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armando’s Company Name – Tree Care & Cutting</title>
-
+    <title>Armando’s Tree Care Services</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f0; /* earthy off-white */
+            background: #f5f5f0;
         }
-
         header {
-            background: #3d5c37; /* deep earthy green */
+            background: #3d5c37;
             color: white;
             padding: 25px;
             text-align: center;
         }
-
         .hero {
-            background: url("https://images.unsplash.com/photo-1508873693437-1f76e9a3a52c?auto=format&fit=crop&w=1400&q=80")
-            no-repeat center/cover;
+            background: url("https://images.unsplash.com/photo-1508873693437-1f76e9a3a52c?auto=format&fit=crop&w=1400&q=80") no-repeat center/cover;
             height: 330px;
             display: flex;
             align-items: center;
@@ -31,7 +27,6 @@
             font-size: 2rem;
             font-weight: bold;
         }
-
         .section {
             max-width: 900px;
             margin: 30px auto;
@@ -40,7 +35,6 @@
             border-radius: 10px;
             box-shadow: 0 0 12px rgba(0,0,0,0.1);
         }
-
         .contact-btn {
             display: inline-block;
             background: #5c7f56;
@@ -51,11 +45,9 @@
             font-size: 1.1rem;
             font-weight: bold;
         }
-
         .contact-btn:hover {
             background: #4c6b48;
         }
-
         footer {
             background: #3d5c37;
             color: white;
@@ -63,8 +55,6 @@
             padding: 20px;
             margin-top: 40px;
         }
-
-        /* Chat Box */
         .chatbox {
             position: fixed;
             bottom: 20px;
@@ -78,7 +68,6 @@
             font-size: 0.9rem;
             overflow: hidden;
         }
-
         .chatbox-header {
             background: #5c7f56;
             color: white;
@@ -86,26 +75,22 @@
             text-align: center;
             font-weight: bold;
         }
-
         .chatbox-messages {
             height: 180px;
             padding: 10px;
             overflow-y: auto;
             border-bottom: 1px solid #ddd;
         }
-
         .chatbox-input {
             display: flex;
             padding: 10px;
         }
-
         .chatbox-input input {
             flex-grow: 1;
             padding: 6px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         .chatbox-input button {
             padding: 6px 10px;
             margin-left: 6px;
@@ -115,17 +100,14 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
         .chatbox-input button:hover {
             background: #4c6b48;
         }
-
         .user-msg {
             text-align: right;
             margin: 6px 0;
             color: #333;
         }
-
         .bot-msg {
             text-align: left;
             margin: 6px 0;
@@ -134,93 +116,57 @@
         }
     </style>
 </head>
-
 <body>
-
 <header>
-    <h1>Armando’s Company Name</h1>
-    <p>Professional Tree Care & Cutting Services</p>
+    <h1>Armando’s Tree Care Services</h1>
+    <p>Professional Tree Care & Cutting – Tailored for Your Needs</p>
 </header>
-
 <div class="hero">
-    Quality Tree Care You Can Trust
+    Your Trees, Our Expertise
 </div>
-
 <div class="section">
     <h2>Our Services</h2>
     <ul>
-        <li>Tree Cutting & Removal</li>
-        <li>Tree Trimming & Pruning</li>
-        <li>Stump Removal</li>
-        <li>Storm Damage Cleanup</li>
-        <li>Yard Debris Hauling</li>
+        <li>Tree Removal & Cutting</li>
+        <li>Trimming & Pruning</li>
+        <li>Stump Grinding</li>
+        <li>Emergency Storm Cleanup</li>
+        <li>And More!</li>
     </ul>
-
     <br>
     <a class="contact-btn" href="contact.html">📞 Contact Us</a>
 </div>
-
 <footer>
-    © 2025 Armando’s Company Name – All Rights Reserved
+    © 2025 Armando’s Tree Care Services – All Rights Reserved
 </footer>
-
-<!-- CHAT BOX -->
+<!-- Chat Box -->
 <div class="chatbox">
     <div class="chatbox-header">Live Chat</div>
     <div class="chatbox-messages" id="chatbox-messages">
-        <div class="bot-msg">Hi! How can we help you today?</div>
+        <div class="bot-msg">Hi! How can we assist you today?</div>
     </div>
-
     <div class="chatbox-input">
         <input type="text" id="chat-input" placeholder="Type a message…">
         <button onclick="sendChat()">Send</button>
     </div>
 </div>
-
 <script>
-function sendChat() {
-    const input = document.getElementById("chat-input");
-    const msg = input.value.trim();
-    if (msg === "") return;
-
-    // Show user message
-    const box = document.getElementById("chatbox-messages");
-    box.innerHTML += `<div class="user-msg">${msg}</div>`;
-
-    input.value = "";
-
-    // Basic rule-based responses
-    let reply = "I'm not sure, but you can contact us!";
-
-    const m = msg.toLowerCase();
-
-    if (m.includes("hello") || m.includes("hi")) {
-        reply = "Hello! How can we assist you with your tree care today?";
-    }
-
-    if (m.includes("phone") || m.includes("number")) {
-        reply = "Our phone number is (555) 123-4567.";
-    }
-
-    if (m.includes("hours") || m.includes("open")) {
-        reply = "We operate Monday–Saturday, 7AM–6PM.";
-    }
-
-    if (m.includes("quote") || m.includes("price")) {
-        reply = "We offer free quotes! Click the Contact Us button above.";
-    }
-
-    if (m.includes("services")) {
-        reply = "We provide cutting, trimming, hauling, stump removal, and more.";
-    }
-
-    // Show bot reply
-    setTimeout(() => {
-        box.innerHTML += `<div class="bot-msg">${reply}</div>`;
-        box.scrollTop = box.scrollHeight;
-    }, 500);
-}
-</script>
-
-</body>
-</html>
+    function sendChat() {
+        const input = document.getElementById("chat-input");
+        const msg = input.value.trim();
+        if (msg === "") return;
+        const box = document.getElementById("chatbox-messages");
+        box.innerHTML += `<div class="user-msg">${msg}</div>`;
+        input.value = "";
+        let reply = "I'm not sure, but feel free to contact us!";
+        const m = msg.toLowerCase();
+        if (m.includes("hello") || m.includes("hi")) {
+            reply = "Hello! How can we help you with your trees today?";
+        }
+        if (m.includes("phone") || m.includes("number")) {
+            reply = "You can reach us at (555) 123-4567.";
+        }
+        if (m.includes("services")) {
+            reply = "We offer removal, trimming, stump grinding, and more!";
+        }
+        if (m.includes("hours")
