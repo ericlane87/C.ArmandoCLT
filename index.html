@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Your Trees, Our Expertise</title>
 
 <style>
-
-/* ===== RESET ===== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -15,12 +14,32 @@
   font-family: Arial, sans-serif;
 }
 
-/* ===== HEADER ===== */
+/* HEADER WITH CALL BUTTON */
 header {
-  background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80')
+    center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 100px 20px;
+  position: relative;
+}
+
+.call-btn-top {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #2f4f2f;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  transition: 0.25s ease;
+}
+
+.call-btn-top:hover {
+  background: #3b6f3b;
 }
 
 header h1 {
@@ -34,12 +53,12 @@ header p {
   text-shadow: 0 3px 6px rgba(0,0,0,0.4);
 }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section {
   padding: 60px 20px;
 }
 
-/* ===== SERVICES ===== */
+/* SERVICES SECTION */
 .services-section {
   background: #f8f8f8;
   text-align: center;
@@ -70,7 +89,7 @@ section {
   border-radius: 10px;
   padding: 25px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .service-card:hover {
@@ -90,7 +109,7 @@ section {
   line-height: 1.6;
 }
 
-/* ===== ABOUT US ===== */
+/* ABOUT SECTION */
 .about-section {
   max-width: 900px;
   margin: auto;
@@ -108,7 +127,7 @@ section {
   color: #444;
 }
 
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact-section {
   background: #2f4f2f;
   color: #fff;
@@ -140,7 +159,7 @@ section {
   color: #1d3d1d;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 25px;
@@ -149,19 +168,91 @@ footer {
   font-size: 0.9rem;
 }
 
-</style>
-</head>
+/* CHATBOT FLOATING BUTTON */
+#chatbot-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #2f4f2f;
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: 0.3s;
+}
 
+#chatbot-btn:hover {
+  background: #3b6f3b;
+}
+
+/* CHATBOT WINDOW */
+#chatbot-window {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  z-index: 999;
+  overflow: hidden;
+}
+
+#chatbot-header {
+  background: #2f4f2f;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+}
+
+#chatbot-messages {
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+}
+
+#chatbot-input-area {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+#chatbot-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+#chatbot-send {
+  padding: 8px 12px;
+  background: #2f4f2f;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+</style>
+
+</head>
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- CALL US BUTTON -->
+<a href="tel:+9195592330" class="call-btn-top">Call Us</a>
+
+<!-- HEADER -->
 <header>
   <h1>Your Trees, Our Expertise</h1>
   <p>Professional Tree Care • Reliable Service • Safe Results Every Time</p>
 </header>
 
-
-<!-- ================= SERVICES ================= -->
+<!-- SERVICES -->
 <section id="services" class="services-section">
   <h2 class="section-title">Our Expert Tree Services</h2>
   <p class="section-subtitle">
@@ -170,75 +261,120 @@ footer {
   </p>
 
   <div class="services-grid">
+    <div class="service-card"><h3>🌳 Tree Removal</h3>
+      <p>Safe, efficient removal of hazardous or unwanted trees.</p></div>
 
-    <div class="service-card">
-      <h3>🌳 Tree Removal</h3>
-      <p>
-        Hazardous, storm-damaged, or unwanted trees removed with absolute safety and care.
-      </p>
-    </div>
+    <div class="service-card"><h3>✂️ Trimming & Pruning</h3>
+      <p>Healthier trees, better shape, and stronger growth.</p></div>
 
-    <div class="service-card">
-      <h3>✂️ Tree Trimming & Pruning</h3>
-      <p>
-        Healthy cuts, better growth, and improved curb appeal — all done with expert precision.
-      </p>
-    </div>
+    <div class="service-card"><h3>🪵 Stump Grinding</h3>
+      <p>Clean, smooth, stump-free yards — ready for new landscaping.</p></div>
 
-    <div class="service-card">
-      <h3>🪵 Stump Grinding</h3>
-      <p>
-        We remove stumps below ground level and leave your yard smooth, clean, and ready to use.
-      </p>
-    </div>
+    <div class="service-card"><h3>⛈️ Storm Cleanup</h3>
+      <p>Fast emergency service when storms bring down limbs.</p></div>
 
-    <div class="service-card">
-      <h3>⛈️ Storm Cleanup</h3>
-      <p>
-        Fast, dependable emergency cleanup after storms and fallen limbs.
-      </p>
-    </div>
+    <div class="service-card"><h3>🌱 Lot Clearing</h3>
+      <p>Perfect for construction prep and overgrown areas.</p></div>
 
-    <div class="service-card">
-      <h3>🌱 Land & Lot Clearing</h3>
-      <p>
-        Clear your property for construction, landscaping, or general cleanup.
-      </p>
-    </div>
-
-    <div class="service-card">
-      <h3>🌿 Hedge & Bush Shaping</h3>
-      <p>
-        A clean, sharp, manicured look for your home's landscaping.
-      </p>
-    </div>
-
+    <div class="service-card"><h3>🌿 Shrub Shaping</h3>
+      <p>Clean, crisp trimming for a professional look.</p></div>
   </div>
 </section>
 
-
-<!-- ================= ABOUT SECTION ================= -->
+<!-- ABOUT -->
 <section class="about-section">
   <h2>Why Homeowners Choose Us</h2>
   <p>
     We combine safety, professionalism, and affordability to deliver the highest-quality tree service experience.
-    Whether it's a routine trim or an emergency removal, our team treats your property with the same care as our own.
+    Whether it's a routine trim or an emergency removal, we treat your property with care and respect.
   </p>
 </section>
 
-
-<!-- ================= CONTACT ================= -->
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <h2>Ready for Professional Tree Service?</h2>
-  <p>Fast estimates, fair pricing, and unmatched customer care.</p>
-  <a href="#contact" class="contact-btn">Request a Quote</a>
+  <p>Fast estimates, fair pricing, and dependable service.</p>
+  <a href="tel:+9195592330" class="contact-btn">Call Now</a>
 </section>
 
-
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer>
   © 2025 Your Trees, Our Expertise — Professional Tree Services
 </footer>
+
+<!-- CHATBOT BUTTON -->
+<div id="chatbot-btn">Chat</div>
+
+<!-- CHATBOT WINDOW -->
+<div id="chatbot-window">
+  <div id="chatbot-header">Tree Service Assistant</div>
+  <div id="chatbot-messages"></div>
+  <div id="chatbot-input-area">
+    <input type="text" id="chatbot-input" placeholder="Ask a question..." />
+    <button id="chatbot-send">Send</button>
+  </div>
+</div>
+
+<!-- RULE-BASED CHATBOT SCRIPT -->
+<script>
+const chatbotBtn = document.getElementById("chatbot-btn");
+const chatbotWindow = document.getElementById("chatbot-window");
+const chatbotInput = document.getElementById("chatbot-input");
+const chatbotSend = document.getElementById("chatbot-send");
+const chatbotMessages = document.getElementById("chatbot-messages");
+
+chatbotBtn.onclick = () => {
+  chatbotWindow.style.display =
+    chatbotWindow.style.display === "block" ? "none" : "block";
+};
+
+function botReply(msg) {
+  chatbotMessages.innerHTML +=
+    "<div><strong>Bot:</strong> " + msg + "</div>";
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function userReply(msg) {
+  chatbotMessages.innerHTML +=
+    "<div><strong>You:</strong> " + msg + "</div>";
+}
+
+function processMessage(message) {
+  const msg = message.toLowerCase();
+
+  if (msg.includes("hello") || msg.includes("hi")) {
+    return "Hello! How can I assist you with tree services today?";
+  }
+  if (msg.includes("quote") || msg.includes("price")) {
+    return "We provide free estimates! What service do you need a quote for?";
+  }
+  if (msg.includes("remove")) {
+    return "Tree removal starts with a quick assessment. Is the tree leaning, dead, or storm-damaged?";
+  }
+  if (msg.includes("stump")) {
+    return "Stump grinding can usually be completed same-day. How large is the stump?";
+  }
+  if (msg.includes("emergency") || msg.includes("storm")) {
+    return "We offer emergency storm cleanup. What's the situation at your location?";
+  }
+  if (msg.includes("contact")) {
+    return "You can call us anytime at +9195592330.";
+  }
+  return "I'm here to help! Tell me what tree service you're looking for.";
+}
+
+chatbotSend.onclick = () => {
+  const message = chatbotInput.value.trim();
+  if (!message) return;
+
+  userReply(message);
+  chatbotInput.value = "";
+
+  setTimeout(() => {
+    botReply(processMessage(message));
+  }, 500);
+};
+</script>
 
 </body>
 </html>
