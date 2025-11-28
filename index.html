@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Your Trees, Our Expertise</title>
+<title>Armando Tree Service</title>
 
 <style>
 /* RESET */
@@ -237,7 +237,6 @@ footer {
   border-radius: 6px;
   cursor: pointer;
 }
-
 </style>
 
 </head>
@@ -248,58 +247,58 @@ footer {
 
 <!-- HEADER -->
 <header>
-  <h1>Your Trees, Our Expertise</h1>
-  <p>Professional Tree Care • Reliable Service • Safe Results Every Time</p>
+  <h1>Armando Tree Service</h1>
+  <p>Professional. Reliable. Local Experts You Can Trust.</p>
 </header>
 
 <!-- SERVICES -->
 <section id="services" class="services-section">
   <h2 class="section-title">Our Expert Tree Services</h2>
   <p class="section-subtitle">
-    Precision. Safety. Cleanup Done Right.<br>
-    Your trees deserve experts — and we're here to deliver.
+    Safe, reliable, affordable tree work for every home and property.
   </p>
 
   <div class="services-grid">
     <div class="service-card"><h3>🌳 Tree Removal</h3>
-      <p>Safe, efficient removal of hazardous or unwanted trees.</p></div>
+      <p>Safe removal of dead, leaning, or dangerous trees.</p></div>
 
     <div class="service-card"><h3>✂️ Trimming & Pruning</h3>
-      <p>Healthier trees, better shape, and stronger growth.</p></div>
+      <p>Improve tree health, growth, and appearance.</p></div>
 
     <div class="service-card"><h3>🪵 Stump Grinding</h3>
-      <p>Clean, smooth, stump-free yards — ready for new landscaping.</p></div>
+      <p>Clean removal of old stumps for a smooth yard.</p></div>
 
     <div class="service-card"><h3>⛈️ Storm Cleanup</h3>
-      <p>Fast emergency service when storms bring down limbs.</p></div>
+      <p>Emergency response for fallen limbs and debris.</p></div>
 
     <div class="service-card"><h3>🌱 Lot Clearing</h3>
-      <p>Perfect for construction prep and overgrown areas.</p></div>
+      <p>Prepare land for construction or landscaping.</p></div>
 
-    <div class="service-card"><h3>🌿 Shrub Shaping</h3>
-      <p>Clean, crisp trimming for a professional look.</p></div>
+    <div class="service-card"><h3>🌿 Hedge Trimming</h3>
+      <p>A cleaner, sharper look for your outdoor spaces.</p></div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about-section">
-  <h2>Why Homeowners Choose Us</h2>
+  <h2>Why Choose Armando Tree Service?</h2>
   <p>
-    We combine safety, professionalism, and affordability to deliver the highest-quality tree service experience.
-    Whether it's a routine trim or an emergency removal, we treat your property with care and respect.
+    With years of experience serving our community, we deliver professional,
+    affordable, and high-quality tree care.  
+    Whether you need emergency cleanup or routine trimming, our team treats your property with respect and attention to detail.
   </p>
 </section>
 
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
-  <h2>Ready for Professional Tree Service?</h2>
-  <p>Fast estimates, fair pricing, and dependable service.</p>
+  <h2>Get Your Free Estimate Today</h2>
+  <p>Fast service. Fair pricing. Friendly professionals.</p>
   <a href="tel:+9195592330" class="contact-btn">Call Now</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  © 2025 Your Trees, Our Expertise — Professional Tree Services
+  © 2025 Armando Tree Service — Serving our local community with pride.
 </footer>
 
 <!-- CHATBOT BUTTON -->
@@ -307,7 +306,7 @@ footer {
 
 <!-- CHATBOT WINDOW -->
 <div id="chatbot-window">
-  <div id="chatbot-header">Tree Service Assistant</div>
+  <div id="chatbot-header">Armando Assistant</div>
   <div id="chatbot-messages"></div>
   <div id="chatbot-input-area">
     <input type="text" id="chatbot-input" placeholder="Ask a question..." />
@@ -315,7 +314,7 @@ footer {
   </div>
 </div>
 
-<!-- RULE-BASED CHATBOT SCRIPT -->
+<!-- BILINGUAL CHATBOT SCRIPT -->
 <script>
 const chatbotBtn = document.getElementById("chatbot-btn");
 const chatbotWindow = document.getElementById("chatbot-window");
@@ -329,38 +328,45 @@ chatbotBtn.onclick = () => {
 };
 
 function botReply(msg) {
-  chatbotMessages.innerHTML +=
-    "<div><strong>Bot:</strong> " + msg + "</div>";
+  chatbotMessages.innerHTML += "<div><strong>Bot:</strong> " + msg + "</div>";
   chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 }
 
 function userReply(msg) {
-  chatbotMessages.innerHTML +=
-    "<div><strong>You:</strong> " + msg + "</div>";
+  chatbotMessages.innerHTML += "<div><strong>You:</strong> " + msg + "</div>";
 }
 
-function processMessage(message) {
-  const msg = message.toLowerCase();
+function isSpanish(text) {
+  return /[áéíóúñ¿¡]/i.test(text) ||
+         /\b(hola|precio|cuánto|árbol|servicio|estimado|remover|limpiar|urgencia|molino|tocón|poda|ramas)\b/i.test(text);
+}
 
-  if (msg.includes("hello") || msg.includes("hi")) {
-    return "Hello! How can I assist you with tree services today?";
-  }
-  if (msg.includes("quote") || msg.includes("price")) {
-    return "We provide free estimates! What service do you need a quote for?";
-  }
-  if (msg.includes("remove")) {
-    return "Tree removal starts with a quick assessment. Is the tree leaning, dead, or storm-damaged?";
-  }
-  if (msg.includes("stump")) {
-    return "Stump grinding can usually be completed same-day. How large is the stump?";
-  }
-  if (msg.includes("emergency") || msg.includes("storm")) {
-    return "We offer emergency storm cleanup. What's the situation at your location?";
-  }
-  if (msg.includes("contact")) {
-    return "You can call us anytime at +9195592330.";
-  }
-  return "I'm here to help! Tell me what tree service you're looking for.";
+function processEnglish(msg) {
+  const t = msg.toLowerCase();
+
+  if (t.includes("hello") || t.includes("hi")) return "Hello! How can I help you today?";
+  if (t.includes("price") || t.includes("quote")) return "We offer free estimates! What service do you need?";
+  if (t.includes("remove") || t.includes("tree removal")) return "We can safely remove dead, leaning, or dangerous trees. What kind of removal do you need?";
+  if (t.includes("trim") || t.includes("prune")) return "Tree trimming improves health and growth. What tree needs trimming?";
+  if (t.includes("stump")) return "We offer stump grinding. How big is the stump you need removed?";
+  if (t.includes("emergency") || t.includes("storm")) return "We provide storm cleanup. What happened at your location?";
+  if (t.includes("contact") || t.includes("call")) return "You can call Armando Tree Service at +9195592330.";
+  
+  return "I’m here to help! What tree service are you looking for?";
+}
+
+function processSpanish(msg) {
+  const t = msg.toLowerCase();
+
+  if (t.includes("hola")) return "¡Hola! ¿En qué puedo ayudarle hoy?";
+  if (t.includes("precio") || t.includes("cuánto") || t.includes("estimado")) return "¡Ofrecemos estimados gratis! ¿Qué servicio necesita?";
+  if (t.includes("remover") || t.includes("árbol")) return "Podemos remover árboles peligrosos o dañados. ¿Qué tipo de árbol necesita quitar?";
+  if (t.includes("poda") || t.includes("ramas") || t.includes("recortar")) return "La poda ayuda al crecimiento saludable. ¿Qué árbol necesita atención?";
+  if (t.includes("tocón") || t.includes("stump")) return "Ofrecemos servicio de molino de tocones. ¿Qué tamaño tiene el tocón?";
+  if (t.includes("emergencia") || t.includes("tormenta")) return "Ofrecemos limpieza de emergencia. ¿Qué pasó en su propiedad?";
+  if (t.includes("llamar") || t.includes("contacto")) return "Puede llamar a Armando Tree Service al +9195592330.";
+
+  return "Estoy aquí para ayudarle. ¿Qué servicio de árboles necesita?";
 }
 
 chatbotSend.onclick = () => {
@@ -371,7 +377,8 @@ chatbotSend.onclick = () => {
   chatbotInput.value = "";
 
   setTimeout(() => {
-    botReply(processMessage(message));
+    if (isSpanish(message)) botReply(processSpanish(message));
+    else botReply(processEnglish(message));
   }, 500);
 };
 </script>
